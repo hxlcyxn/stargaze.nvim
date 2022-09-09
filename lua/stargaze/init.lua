@@ -98,6 +98,14 @@ local function set_groups()
 		TSVariable = { fg = colors.blue },
 		TSURI = { fg = colors.lblue, underline = true },
 		TSPunctuation = { fg = colors.black },
+
+		rainbowcol1 = { fg = colors.blue },
+		rainbowcol2 = { fg = colors.red },
+		rainbowcol3 = { fg = colors.gray },
+		rainbowcol4 = { fg = colors.purple },
+		rainbowcol5 = { fg = colors.yellow },
+		rainbowcol6 = { fg = colors.green },
+		rainbowcol7 = { fg = colors.turquoise },
 	}
 
 	for group, parameter in pairs(groups) do
