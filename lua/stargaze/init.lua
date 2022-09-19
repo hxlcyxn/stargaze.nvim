@@ -1,5 +1,6 @@
 local colors = require("stargaze.colors")
 
+--- Set the terminal colors.
 local function set_term_colors()
 	vim.g.terminal_color_0 = colors.bg
 	vim.g.terminal_color_1 = colors.red
@@ -7,7 +8,7 @@ local function set_term_colors()
 	vim.g.terminal_color_3 = colors.yellow
 	vim.g.terminal_color_4 = colors.blue
 	vim.g.terminal_color_5 = colors.purple
-	vim.g.terminal_color_6 = colors.turquoise
+	vim.g.terminal_color_6 = colors.cyan
 	vim.g.terminal_color_7 = colors.lgray
 	vim.g.terminal_color_8 = colors.gray
 	vim.g.terminal_color_9 = colors.lred
@@ -15,19 +16,19 @@ local function set_term_colors()
 	vim.g.terminal_color_11 = colors.lyellow
 	vim.g.terminal_color_12 = colors.lblue
 	vim.g.terminal_color_13 = colors.lpurple
-	vim.g.terminal_color_14 = colors.lturquoise
+	vim.g.terminal_color_14 = colors.lcyan
 	vim.g.terminal_color_15 = colors.llgray
 	vim.g.terminal_color_background = colors.bg
 	vim.g.terminal_color_foreground = colors.fg
 end
 
--- monka comment
+--- Set the highlight groups.
 local function set_groups()
 	local groups = {
 		Normal = { fg = colors.fg, bg = colors.bg },
 		NormalFloat = { bg = colors.bg },
 		FloatBorder = { fg = colors.gray },
-		FloatTitle = { fg = colors.fg },
+		FloatTitle = { fg = colors.black },
 		ColorColumn = { bg = colors.gray },
 		Cursor = { fg = colors.bg, bg = colors.gray },
 		CursorColumn = { bg = colors.grayblue },
@@ -63,7 +64,7 @@ local function set_groups()
 		Comment = { fg = colors.gray, bg = colors.llgray },
 		Constant = { fg = colors.blue, bold = true },
 		String = { bg = colors.lgreen },
-		Identifier = { fg = colors.turquoise },
+		Identifier = { fg = colors.cyan },
 		Keyword = { fg = colors.fg, bold = true },
 		Function = { fg = colors.fg },
 		Statement = { link = "Keyword" },
@@ -107,7 +108,9 @@ local function set_groups()
 		rainbowcol4 = { fg = colors.purple },
 		rainbowcol5 = { fg = colors.yellow },
 		rainbowcol6 = { fg = colors.green },
-		rainbowcol7 = { fg = colors.turquoise },
+		rainbowcol7 = { fg = colors.cyan },
+
+
 	}
 
 	for group, parameter in pairs(groups) do
@@ -115,6 +118,7 @@ local function set_groups()
 	end
 end
 
+--- Set all colors.
 local function set_colors()
 	set_term_colors()
 	set_groups()
@@ -122,6 +126,7 @@ end
 
 local M = {}
 
+--- Set and use the colorscheme.
 function M.colorscheme()
 	vim.api.nvim_command("hi clear")
 	if vim.fn.exists("syntax_on") then
