@@ -91,13 +91,13 @@ local function set_groups()
 		DiagnosticUnderlineInfo = { sp = colors.blue, undercurl = true },
 		DiagnosticUnderlineHint = { sp = colors.gray, undercurl = true },
 
-		TSProperty = { fg = colors.black },
-		TSField = { fg = colors.fg },
-		TSParameter = { fg = colors.blue, bg = colors.grayblue },
-		TSUnderline = { fg = colors.black, underline = true },
-		TSVariable = { fg = colors.blue },
-		TSURI = { fg = colors.lblue, underline = true },
-		TSPunctuation = { fg = colors.black },
+		["@property"] = { fg = colors.black },
+		["@field"] = { fg = colors.fg },
+		["@parameter"] = { fg = colors.blue, bg = colors.grayblue },
+		["@underline"] = { fg = colors.black, underline = true },
+		["@variable"] = { fg = colors.blue },
+		-- ["@uRI"] = { fg = colors.lblue, underline = true },
+		["@punctuation"] = { fg = colors.black },
 	}
 
 	for group, parameter in pairs(groups) do
