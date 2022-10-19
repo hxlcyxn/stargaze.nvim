@@ -67,7 +67,7 @@ local function set_groups()
 		Statement = { link = "Keyword" },
 		Operator = { fg = colors.black },
 		Exception = { link = "Keyword" },
-		PreProc = { fg = colors.black },
+		PreProc = { fg = colors.red },
 		Type = { link = "Identifier" },
 		Structure = { link = "Constant" },
 		Special = { fg = colors.blue },
@@ -96,7 +96,7 @@ local function set_groups()
 		["@parameter"] = { fg = colors.blue, bg = colors.grayblue },
 		["@underline"] = { fg = colors.black, underline = true },
 		["@variable"] = { fg = colors.blue },
-		-- ["@uRI"] = { fg = colors.lblue, underline = true },
+		["@text.uri"] = { fg = colors.lblue, underline = true },
 		["@punctuation"] = { fg = colors.black },
 	}
 
