@@ -94,14 +94,6 @@ local function set_groups()
 		DiagnosticUnderlineInfo = { sp = colors.blue, undercurl = true },
 		DiagnosticUnderlineHint = { sp = colors.gray, undercurl = true },
 
-		TSProperty = { fg = colors.black },
-		TSField = { fg = colors.fg },
-		TSParameter = { fg = colors.blue, bg = colors.grayblue },
-		TSUnderline = { fg = colors.black, underline = true },
-		TSVariable = { fg = colors.blue },
-		TSURI = { fg = colors.lblue, underline = true },
-		TSPunctuation = { fg = colors.black },
-
 		rainbowcol1 = { fg = colors.blue },
 		rainbowcol2 = { fg = colors.red },
 		rainbowcol3 = { fg = colors.gray },
