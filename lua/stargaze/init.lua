@@ -70,7 +70,9 @@ local function set_groups()
 		Statement = { link = "Keyword" },
 		Operator = { fg = colors.black },
 		Exception = { link = "Keyword" },
+<<<<<<< HEAD
 		PreProc = { fg = colors.dgreen },
+>>>>>>> e2995452c98564c765109b0c375864f2d74136c2
 		Type = { link = "Identifier" },
 		Structure = { link = "Constant" },
 		Special = { fg = colors.blue },
@@ -94,6 +96,7 @@ local function set_groups()
 		DiagnosticUnderlineInfo = { sp = colors.blue, undercurl = true },
 		DiagnosticUnderlineHint = { sp = colors.gray, undercurl = true },
 
+<<<<<<< HEAD
 		TSProperty = { fg = colors.black },
 		TSField = { fg = colors.fg },
 		TSParameter = { fg = colors.blue, bg = colors.grayblue },
@@ -125,6 +128,15 @@ local function set_groups()
 		NotifyINFOTitle = { link = "NotifyINFOIcon" },
 		NotifyDEBUGTitle = { link = "NotifyDEBUGIcon" },
 		NotifyTRACETitle = { link = "NotifyTRACEIcon" },
+=======
+		["@property"] = { fg = colors.black },
+		["@field"] = { fg = colors.fg },
+		["@parameter"] = { fg = colors.blue, bg = colors.grayblue },
+		["@underline"] = { fg = colors.black, underline = true },
+		["@variable"] = { fg = colors.blue },
+		["@text.uri"] = { fg = colors.lblue, underline = true },
+		["@punctuation"] = { fg = colors.black },
+>>>>>>> e2995452c98564c765109b0c375864f2d74136c2
 	}
 
 	for group, parameter in pairs(groups) do
