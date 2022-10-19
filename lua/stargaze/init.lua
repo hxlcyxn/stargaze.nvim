@@ -4,7 +4,7 @@ local colors = require("stargaze.colors")
 local function set_term_colors()
 	vim.g.terminal_color_0 = colors.bg
 	vim.g.terminal_color_1 = colors.red
-	vim.g.terminal_color_2 = colors.green
+	vim.g.terminal_color_2 = colors.dgreen
 	vim.g.terminal_color_3 = colors.yellow
 	vim.g.terminal_color_4 = colors.blue
 	vim.g.terminal_color_5 = colors.purple
@@ -70,7 +70,7 @@ local function set_groups()
 		Statement = { link = "Keyword" },
 		Operator = { fg = colors.black },
 		Exception = { link = "Keyword" },
-		PreProc = { fg = colors.black },
+		PreProc = { fg = colors.dgreen },
 		Type = { link = "Identifier" },
 		Structure = { link = "Constant" },
 		Special = { fg = colors.blue },
@@ -110,7 +110,21 @@ local function set_groups()
 		rainbowcol6 = { fg = colors.green },
 		rainbowcol7 = { fg = colors.cyan },
 
-
+		NotifyERRORBorder = { fg = colors.dred },
+		NotifyWARNBorder = { fg = colors.dyellow },
+		NotifyINFOBorder = { fg = colors.blue },
+		NotifyDEBUGBorder = { fg = colors.gray },
+		NotifyTRACEBorder = { fg = colors.dpurple },
+		NotifyERRORIcon = { fg = colors.red },
+		NotifyWARNIcon = { fg = colors.yellow },
+		NotifyINFOIcon = { fg = colors.cyan },
+		NotifyDEBUGIcon = { fg = colors.gray },
+		NotifyTRACEIcon = { fg = colors.purple },
+		NotifyERRORTitle = { link = "NotifyERRORIcon" },
+		NotifyWARNTitle = { link = "NotifyWARNIcon" },
+		NotifyINFOTitle = { link = "NotifyINFOIcon" },
+		NotifyDEBUGTitle = { link = "NotifyDEBUGIcon" },
+		NotifyTRACETitle = { link = "NotifyTRACEIcon" },
 	}
 
 	for group, parameter in pairs(groups) do
