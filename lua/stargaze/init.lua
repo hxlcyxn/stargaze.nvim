@@ -125,6 +125,7 @@ local function set_groups()
 		["@variable"] = { fg = colors.blue },
 		["@text.uri"] = { fg = colors.lblue, underline = true },
 		["@punctuation"] = { fg = colors.black },
+		["@namespace"] = { link = "Function" },
 	}
 
 	for group, parameter in pairs(groups) do
