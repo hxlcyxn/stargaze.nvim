@@ -4,7 +4,7 @@ local M = {}
 function M.generate()
 	if vim.o.background == "dark" then
 	else
-		M.bg = "#EAEAEA"
+		M.bg = "#DEDEDE"
 		M.fg = "#232830"
 
 		M.black = "#1E1B1F"
