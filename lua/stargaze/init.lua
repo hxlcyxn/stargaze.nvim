@@ -56,6 +56,7 @@ local function set_groups()
 		SpecialKey = { fg = colors.gray },
 		Title = { fg = colors.black, bold = true },
 		Visual = { bg = colors.lgray },
+		Todo = { fg = colors.fg, bg = colors.lblue, bold = true },
 
 		Error = { fg = colors.red, bg = colors.lred, bold = true },
 		ErrorMsg = { link = "Error" },
