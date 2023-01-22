@@ -5,12 +5,13 @@ function M.generate()
 	if vim.o.background == "dark" then
 	else
 		M.bg = "#DEDEDE"
+		M.bg2 = "#E3E3E3"
 		M.fg = "#232830"
 
 		M.black = "#1E1B1F"
 		M.gray = "#9CA0A4"
-		M.lgray = "#D6D6D6"
-		M.llgray = "#E3E3E3"
+		M.lgray = "#D0D0D0"
+		M.llgray = "#D6D6D6"
 		M.grayblue = "#d8e4f8"
 		M.blue = "#2B2A80"
 		M.lblue = "#a3cff4"

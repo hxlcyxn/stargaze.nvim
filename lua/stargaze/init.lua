@@ -26,7 +26,7 @@ end
 local function set_groups()
 	local groups = {
 		Normal = { fg = colors.fg, bg = colors.bg },
-		NormalFloat = { bg = colors.bg },
+		NormalFloat = { bg = colors.llgray },
 		FloatBorder = { fg = colors.gray },
 		FloatTitle = { fg = colors.black },
 		ColorColumn = { bg = colors.gray },
@@ -46,7 +46,7 @@ local function set_groups()
 		ModeMsg = { link = "String" },
 		MoreMsg = { link = "String" },
 		NonText = { fg = colors.lgray },
-		PMenu = { fg = colors.fg, bg = colors.llgray },
+		PMenu = { fg = colors.fg, bg = colors.bg2 },
 		PMenuSel = { fg = colors.black, bg = colors.lgray, bold = true },
 		PMenuSBar = { bg = colors.gray },
 		PMenuThumb = { bg = colors.black },
@@ -62,7 +62,7 @@ local function set_groups()
 		ErrorMsg = { link = "Error" },
 		WarningMsg = { fg = colors.yellow, bg = colors.lyellow },
 
-		Comment = { fg = colors.gray, bg = colors.llgray },
+		Comment = { fg = colors.gray, bg = colors.bg2 },
 		Constant = { fg = colors.blue, bold = true },
 		String = { bg = colors.lgreen },
 		Identifier = { fg = colors.cyan },
@@ -118,6 +118,15 @@ local function set_groups()
 		NotifyINFOTitle = { link = "NotifyINFOIcon" },
 		NotifyDEBUGTitle = { link = "NotifyDEBUGIcon" },
 		NotifyTRACETitle = { link = "NotifyTRACEIcon" },
+
+		TelescopeNormal = { link = "NormalFloat" },
+		TelescopePromptNormal = { bg = colors.lgray },
+		TelescopePromptBorder = { link = "TelescopePromptNormal" },
+		TelescopePromptTitle = { bg = colors.lgray, bold = true },
+		TelescopePreviewNormal = { link = "Normal" },
+
+		FidgetTitle = { link = "Title" },
+		FidgetTask = { fg = colors.gray },
 
 		["@property"] = { fg = colors.black },
 		["@field"] = { fg = colors.fg },
