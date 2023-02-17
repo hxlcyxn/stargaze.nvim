@@ -3,21 +3,21 @@ local colors = require("stargaze.colors")
 --- Set the terminal colors.
 local function set_term_colors()
 	vim.g.terminal_color_0 = colors.bg
-	vim.g.terminal_color_1 = colors.red
-	vim.g.terminal_color_2 = colors.dgreen
-	vim.g.terminal_color_3 = colors.yellow
-	vim.g.terminal_color_4 = colors.blue
-	vim.g.terminal_color_5 = colors.purple
-	vim.g.terminal_color_6 = colors.cyan
-	vim.g.terminal_color_7 = colors.lgray
-	vim.g.terminal_color_8 = colors.gray
-	vim.g.terminal_color_9 = colors.lred
-	vim.g.terminal_color_10 = colors.lgreen
-	vim.g.terminal_color_11 = colors.lyellow
-	vim.g.terminal_color_12 = colors.lblue
-	vim.g.terminal_color_13 = colors.lpurple
+	vim.g.terminal_color_1 = colors.error
+	vim.g.terminal_color_2 = colors.preproc
+	vim.g.terminal_color_3 = colors.warn
+	vim.g.terminal_color_4 = colors.variable
+	vim.g.terminal_color_5 = colors.trace
+	vim.g.terminal_color_6 = colors.identifier
+	vim.g.terminal_color_7 = colors.nontext
+	vim.g.terminal_color_8 = colors.comment
+	vim.g.terminal_color_9 = colors.error1
+	vim.g.terminal_color_10 = colors.string
+	vim.g.terminal_color_11 = colors.warn1
+	vim.g.terminal_color_12 = colors.uri
+	vim.g.terminal_color_13 = colors.trace1
 	vim.g.terminal_color_14 = colors.lcyan
-	vim.g.terminal_color_15 = colors.llgray
+	vim.g.terminal_color_15 = colors.float
 	vim.g.terminal_color_background = colors.bg
 	vim.g.terminal_color_foreground = colors.fg
 end
@@ -26,93 +26,93 @@ end
 local function set_groups()
 	local groups = {
 		Normal = { fg = colors.fg, bg = colors.bg },
-		NormalFloat = { bg = colors.llgray },
-		FloatBorder = { fg = colors.gray },
-		FloatTitle = { fg = colors.black },
-		ColorColumn = { bg = colors.gray },
-		Cursor = { fg = colors.bg, bg = colors.gray },
+		NormalFloat = { bg = colors.float },
+		FloatBorder = { fg = colors.comment },
+		FloatTitle = { fg = colors.operator },
+		ColorColumn = { bg = colors.comment },
+		Cursor = { fg = colors.bg, bg = colors.comment },
 		CursorColumn = { bg = colors.grayblue },
 		CursorLine = { bg = colors.grayblue },
-		CursorLineNr = { fg = colors.black, bg = colors.grayblue, bold = true },
-		LineNr = { fg = colors.black },
+		CursorLineNr = { fg = colors.operator, bg = colors.grayblue, bold = true },
+		LineNr = { fg = colors.operator },
 
-		Directory = { fg = colors.black },
-		VertSplit = { fg = colors.gray, bg = colors.bg },
+		Directory = { fg = colors.operator },
+		VertSplit = { fg = colors.comment, bg = colors.bg },
 		Folded = { link = "Comment" },
 		FoldColumn = { link = "Comment" },
 		SignColumn = { bg = colors.bg },
 
-		MatchParen = { fg = colors.black, bg = colors.lgray, bold = true },
+		MatchParen = { fg = colors.operator, bg = colors.nontext, bold = true },
 		ModeMsg = { link = "String" },
 		MoreMsg = { link = "String" },
-		NonText = { fg = colors.lgray },
+		NonText = { fg = colors.nontext },
 		PMenu = { fg = colors.fg, bg = colors.bg2 },
-		PMenuSel = { fg = colors.black, bg = colors.lgray, bold = true },
-		PMenuSBar = { bg = colors.gray },
-		PMenuThumb = { bg = colors.black },
-		Question = { fg = colors.black },
-		Search = { fg = colors.fg, bg = colors.lyellow },
+		PMenuSel = { fg = colors.operator, bg = colors.nontext, bold = true },
+		PMenuSBar = { bg = colors.comment },
+		PMenuThumb = { bg = colors.operator },
+		Question = { fg = colors.operator },
+		Search = { fg = colors.fg, bg = colors.warn1 },
 		IncSearch = { link = "Search" },
-		SpecialKey = { fg = colors.gray },
-		Title = { fg = colors.black, bold = true },
-		Visual = { bg = colors.lgray },
-		Todo = { fg = colors.fg, bg = colors.lblue, bold = true },
+		SpecialKey = { fg = colors.comment },
+		Title = { fg = colors.operator, bold = true },
+		Visual = { bg = colors.nontext },
+		Todo = { fg = colors.fg, bg = colors.uri, bold = true },
 
-		Error = { fg = colors.red, bg = colors.lred, bold = true },
+		Error = { fg = colors.error, bg = colors.error1, bold = true },
 		ErrorMsg = { link = "Error" },
-		WarningMsg = { fg = colors.yellow, bg = colors.lyellow },
+		WarningMsg = { fg = colors.warn, bg = colors.warn1 },
 
-		Comment = { fg = colors.gray, bg = colors.bg2 },
-		Constant = { fg = colors.blue, bold = true },
-		String = { bg = colors.lgreen },
-		Identifier = { fg = colors.cyan },
+		Comment = { fg = colors.comment, bg = colors.bg2 },
+		Constant = { fg = colors.variable, bold = true },
+		String = { bg = colors.string },
+		Identifier = { fg = colors.identifier },
 		Keyword = { fg = colors.fg, bold = true },
 		Function = { fg = colors.fg },
 		Statement = { link = "Keyword" },
-		Operator = { fg = colors.black },
+		Operator = { fg = colors.operator },
 		Exception = { link = "Keyword" },
-		PreProc = { fg = colors.dgreen },
+		PreProc = { fg = colors.preproc },
 		Type = { link = "Identifier" },
 		Structure = { link = "Constant" },
-		Special = { fg = colors.blue },
+		Special = { fg = colors.variable },
 		Underlined = { underline = true },
 		Conceal = { link = "Comment" },
 
-		DiffAdd = { bg = colors.lgreen },
+		DiffAdd = { bg = colors.string },
 		DiffAdded = { link = "DiffAdd" },
-		DiffDelete = { bg = colors.lred },
+		DiffDelete = { bg = colors.error1 },
 		DiffRemoved = { link = "DiffDelete" },
-		DiffChange = { bg = colors.lblue },
+		DiffChange = { bg = colors.uri },
 		DiffChanged = { link = "DiffChange" },
 
 		DiagnosticError = { link = "Error" },
 		DiagnosticWarn = { link = "WarningMsg" },
-		DiagnosticInfo = { fg = colors.blue, bg = colors.lblue },
-		DiagnosticHint = { fg = colors.gray, bg = colors.grayblue },
+		DiagnosticInfo = { fg = colors.variable, bg = colors.uri },
+		DiagnosticHint = { fg = colors.comment, bg = colors.grayblue },
 
-		DiagnosticUnderlineError = { sp = colors.red, undercurl = true },
-		DiagnosticUnderlineWarn = { sp = colors.yellow, undercurl = true },
-		DiagnosticUnderlineInfo = { sp = colors.blue, undercurl = true },
-		DiagnosticUnderlineHint = { sp = colors.gray, undercurl = true },
+		DiagnosticUnderlineError = { sp = colors.error, undercurl = true },
+		DiagnosticUnderlineWarn = { sp = colors.warn, undercurl = true },
+		DiagnosticUnderlineInfo = { sp = colors.variable, undercurl = true },
+		DiagnosticUnderlineHint = { sp = colors.comment, undercurl = true },
 
-		rainbowcol1 = { fg = colors.blue },
-		rainbowcol2 = { fg = colors.red },
-		rainbowcol3 = { fg = colors.gray },
-		rainbowcol4 = { fg = colors.purple },
-		rainbowcol5 = { fg = colors.yellow },
-		rainbowcol6 = { fg = colors.green },
-		rainbowcol7 = { fg = colors.cyan },
+		rainbowcol1 = { fg = colors.variable },
+		rainbowcol2 = { fg = colors.error },
+		rainbowcol3 = { fg = colors.comment },
+		rainbowcol4 = { fg = colors.trace },
+		rainbowcol5 = { fg = colors.warn },
+		rainbowcol6 = { fg = colors.preproc },
+		rainbowcol7 = { fg = colors.identifier },
 
-		NotifyERRORBorder = { fg = colors.dred },
-		NotifyWARNBorder = { fg = colors.dyellow },
-		NotifyINFOBorder = { fg = colors.blue },
-		NotifyDEBUGBorder = { fg = colors.gray },
-		NotifyTRACEBorder = { fg = colors.dpurple },
-		NotifyERRORIcon = { fg = colors.red },
-		NotifyWARNIcon = { fg = colors.yellow },
-		NotifyINFOIcon = { fg = colors.cyan },
-		NotifyDEBUGIcon = { fg = colors.gray },
-		NotifyTRACEIcon = { fg = colors.purple },
+		NotifyERRORBorder = { fg = colors.error2 },
+		NotifyWARNBorder = { fg = colors.warn2 },
+		NotifyINFOBorder = { fg = colors.variable },
+		NotifyDEBUGBorder = { fg = colors.comment },
+		NotifyTRACEBorder = { fg = colors.trace2 },
+		NotifyERRORIcon = { fg = colors.error },
+		NotifyWARNIcon = { fg = colors.warn },
+		NotifyINFOIcon = { fg = colors.identifier },
+		NotifyDEBUGIcon = { fg = colors.comment },
+		NotifyTRACEIcon = { fg = colors.trace },
 		NotifyERRORTitle = { link = "NotifyERRORIcon" },
 		NotifyWARNTitle = { link = "NotifyWARNIcon" },
 		NotifyINFOTitle = { link = "NotifyINFOIcon" },
@@ -120,21 +120,21 @@ local function set_groups()
 		NotifyTRACETitle = { link = "NotifyTRACEIcon" },
 
 		TelescopeNormal = { link = "NormalFloat" },
-		TelescopePromptNormal = { bg = colors.lgray },
+		TelescopePromptNormal = { bg = colors.nontext },
 		TelescopePromptBorder = { link = "TelescopePromptNormal" },
-		TelescopePromptTitle = { bg = colors.lgray, bold = true },
+		TelescopePromptTitle = { bg = colors.nontext, bold = true },
 		TelescopePreviewNormal = { link = "Normal" },
 
 		FidgetTitle = { link = "Title" },
-		FidgetTask = { fg = colors.gray },
+		FidgetTask = { fg = colors.comment },
 
-		["@property"] = { fg = colors.black },
+		["@property"] = { fg = colors.operator },
 		["@field"] = { fg = colors.fg },
-		["@parameter"] = { fg = colors.blue, bg = colors.grayblue },
-		["@underline"] = { fg = colors.black, underline = true },
-		["@variable"] = { fg = colors.blue },
-		["@text.uri"] = { fg = colors.lblue, underline = true },
-		["@punctuation"] = { fg = colors.black },
+		["@parameter"] = { fg = colors.variable, bg = colors.grayblue },
+		["@underline"] = { fg = colors.operator, underline = true },
+		["@variable"] = { fg = colors.variable },
+		["@text.uri"] = { fg = colors.uri, underline = true },
+		["@punctuation"] = { fg = colors.operator },
 		["@namespace"] = { link = "Function" },
 	}
 
