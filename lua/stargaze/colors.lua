@@ -15,7 +15,7 @@ function M.generate()
 		M.variable = "#312fb0"
 		M.uri = "#0c3768"
 		M.identifier = "#0e7867"
-		M.lcyan = "#b7e6e1"
+		M.lcyan = "#97c6c1"
 		M.string = "#00271d"
 		M.preproc = "#477112"
 		M.warn = "#fea346"
