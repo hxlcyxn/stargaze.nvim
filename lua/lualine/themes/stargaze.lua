@@ -8,7 +8,7 @@ return {
 	},
 	insert = {
 		a = { fg = colors.bg, bg = colors.variable },
-		b = { fg = colors.bg, bg = colors.uri },
+		b = { fg = colors.fg, bg = colors.uri },
 		c = { fg = colors.fg, bg = colors.bg2 },
 	},
 	visual = {
