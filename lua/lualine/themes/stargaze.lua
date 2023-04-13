@@ -2,8 +2,8 @@ local colors = require("stargaze.colors")
 
 return {
 	normal = {
-		a = { fg = colors.fg, bg = colors.float },
-		b = { fg = colors.fg, bg = colors.bg2 },
+		a = { fg = colors.bg, bg = colors.fg },
+		b = { fg = colors.fg, bg = colors.float },
 		c = { fg = colors.fg, bg = colors.bg2 },
 	},
 	insert = {
