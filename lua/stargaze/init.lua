@@ -8,7 +8,7 @@ local function set_term_colors()
 	vim.g.terminal_color_3 = colors.warn
 	vim.g.terminal_color_4 = colors.variable
 	vim.g.terminal_color_5 = colors.trace
-	vim.g.terminal_color_6 = colors.identifier
+	vim.g.terminal_color_6 = colors.type
 	vim.g.terminal_color_7 = colors.nontext
 	vim.g.terminal_color_8 = colors.comment
 	vim.g.terminal_color_9 = colors.error1
@@ -65,14 +65,14 @@ local function set_groups()
 		Comment = { fg = colors.comment, bg = colors.bg2 },
 		Constant = { fg = colors.variable, bold = true },
 		String = { bg = colors.string },
-		Identifier = { fg = colors.identifier },
+		Identifier = { link = "@variable" },
 		Keyword = { fg = colors.fg, bold = true },
 		Function = { fg = colors.fg },
 		Statement = { link = "Keyword" },
 		Operator = { fg = colors.operator },
 		Exception = { link = "Keyword" },
 		PreProc = { fg = colors.preproc },
-		Type = { link = "Identifier" },
+		Type = { colors.type },
 		Structure = { link = "Constant" },
 		Special = { fg = colors.variable },
 		Underlined = { underline = true },
@@ -101,7 +101,7 @@ local function set_groups()
 		rainbowcol4 = { fg = colors.trace },
 		rainbowcol5 = { fg = colors.warn },
 		rainbowcol6 = { fg = colors.preproc },
-		rainbowcol7 = { fg = colors.identifier },
+		rainbowcol7 = { fg = colors.type },
 
 		NotifyERRORBorder = { fg = colors.error2 },
 		NotifyWARNBorder = { fg = colors.warn2 },
@@ -110,7 +110,7 @@ local function set_groups()
 		NotifyTRACEBorder = { fg = colors.trace2 },
 		NotifyERRORIcon = { fg = colors.error },
 		NotifyWARNIcon = { fg = colors.warn },
-		NotifyINFOIcon = { fg = colors.identifier },
+		NotifyINFOIcon = { fg = colors.type },
 		NotifyDEBUGIcon = { fg = colors.comment },
 		NotifyTRACEIcon = { fg = colors.trace },
 		NotifyERRORTitle = { link = "NotifyERRORIcon" },
