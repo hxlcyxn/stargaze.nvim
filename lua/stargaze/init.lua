@@ -65,7 +65,7 @@ local function set_groups()
 		Comment = { fg = colors.comment, bg = colors.bg2 },
 		Constant = { fg = colors.variable, bold = true },
 		String = { bg = colors.string },
-		Identifier = { fg = colors.variable },
+		Identifier = { link = "@variable" },
 		Keyword = { fg = colors.fg, bold = true },
 		Function = { fg = colors.fg },
 		Statement = { link = "Keyword" },
