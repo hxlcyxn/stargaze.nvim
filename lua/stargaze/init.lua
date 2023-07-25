@@ -85,6 +85,8 @@ local function set_groups()
 		DiffChange = { bg = colors.uri },
 		DiffChanged = { link = "DiffChange" },
 
+		LspInlayHint = { link = "Comment" },
+
 		DiagnosticError = { link = "Error" },
 		DiagnosticWarn = { link = "WarningMsg" },
 		DiagnosticInfo = { fg = colors.variable, bg = colors.uri },
