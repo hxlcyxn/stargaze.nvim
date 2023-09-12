@@ -124,7 +124,7 @@ local function set_groups()
 		TelescopeNormal = { link = "NormalFloat" },
 		TelescopePromptNormal = { bg = colors.nontext },
 		TelescopePromptBorder = { link = "TelescopePromptNormal" },
-		TelescopePromptTitle = { bg = colors.nontext, bold = true },
+		TelescopePromptTitle = { fg = colors.bg, bg = colors.fg, bold = true },
 		TelescopePreviewNormal = { link = "Normal" },
 
 		FidgetTitle = { link = "Title" },
