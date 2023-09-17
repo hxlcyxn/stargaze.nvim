@@ -78,6 +78,10 @@ local function set_groups()
 		Underlined = { underline = true },
 		Conceal = { link = "Comment" },
 
+		GitSignsAdd = { fg = colors.string, bg = colors.bg },
+		GitSignsChange = { fg = colors.uri, bg = colors.bg },
+		GitSignsDelete = { fg = colors.error1, bg = colors.bg},
+
 		DiffAdd = { bg = colors.string },
 		DiffAdded = { link = "DiffAdd" },
 		DiffDelete = { bg = colors.error1 },
