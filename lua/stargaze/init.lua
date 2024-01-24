@@ -134,14 +134,14 @@ local function set_groups()
 		FidgetTitle = { link = "Title" },
 		FidgetTask = { fg = colors.comment },
 
+		["@markup.link.url"] = { fg = colors.uri, underline = true },
+		["@markup.underline"] = { fg = colors.operator, underline = true },
+		["@module"] = { link = "Function" },
 		["@property"] = { fg = colors.operator },
-		["@field"] = { fg = colors.fg },
-		["@parameter"] = { fg = colors.variable, bg = colors.grayblue },
-		["@underline"] = { fg = colors.operator, underline = true },
-		["@variable"] = { fg = colors.variable },
-		["@text.uri"] = { fg = colors.uri, underline = true },
 		["@punctuation"] = { fg = colors.operator },
-		["@namespace"] = { link = "Function" },
+		["@variable"] = { fg = colors.variable },
+		["@variable.member"] = { fg = colors.fg },
+		["@variable.parameter"] = { fg = colors.variable, bg = colors.grayblue },
 	}
 
 	for group, parameter in pairs(groups) do
