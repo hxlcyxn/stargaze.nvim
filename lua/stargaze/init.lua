@@ -166,7 +166,7 @@ local function set_groups()
 		["@variable"] = { link = "Identifier" }, -- various variable names
 		["@variable.builtin"] = { link = "@variable" }, -- built-ins (`this` etc)
 		["@variable.parameter"] = { fg = c.variable, bg = c.grayblue }, -- parameters of functions
-		["@variable.member"] = { link = "Normal" }, -- object and sstruct fields
+		["@variable.member"] = { fg = c.fg }, -- object and sstruct fields
 
 		["@constant"] = { link = "Constant" }, -- constant identifiers
 		["@constant.builtin"] = { link = "@constant" }, -- built-in constant values
