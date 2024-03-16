@@ -195,7 +195,6 @@ local function set_groups()
 		["@type"] = { link = "Type" }, -- type or class definitions and annotations
 		["@type.builtin"] = { link = "@type" }, -- built-in types
 		["@type.definition"] = { link = "@type" }, -- identifiers in type definitions
-		["@type.qualifier"] = { link = "@type" }, -- type or class definitions and annotations
 
 		["@attribute"] = { fg = c.variable, bold = true }, -- attribute annotations (decorators etc)
 		["@property"] = { fg = c.operator }, -- the key in key/value pairs
@@ -215,7 +214,7 @@ local function set_groups()
 		["@keyword.function"] = { link = "@keyword" }, -- keywords that define a function (e.g. `func` in Go, `def` in Python)
 		["@keyword.operator"] = { link = "@keyword" }, -- operators that are English words (e.g. `and` / `or`)
 		["@keyword.import"] = { link = "@keyword" }, -- keywords for including modules (e.g. `import` / `from` in Python)
-		["@keyword.storage"] = { link = "@keyword" }, -- modifiers that affect storage in memory or life-time
+		["@keyword.modifier"] = { link = "@keyword" }, -- modifiers that affect storage in memory or life-time
 		["@keyword.repeat"] = { link = "@keyword" }, -- keywords related to loops (e.g. `for` / `while`)
 		["@keyword.return"] = { link = "@keyword" }, -- keywords like `return` and `yield`
 		["@keyword.debug"] = { link = "@keyword" }, -- keywords related to debugging
