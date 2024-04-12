@@ -3,21 +3,21 @@ local c = require("stargaze.colors")
 --- Set the terminal colors.
 local function set_term_colors()
 	vim.g.terminal_color_0 = c.bg
-	vim.g.terminal_color_1 = c.error
-	vim.g.terminal_color_2 = c.preproc
-	vim.g.terminal_color_3 = c.warn
-	vim.g.terminal_color_4 = c.variable
-	vim.g.terminal_color_5 = c.trace
-	vim.g.terminal_color_6 = c.identifier
-	vim.g.terminal_color_7 = c.nontext
-	vim.g.terminal_color_8 = c.comment
-	vim.g.terminal_color_9 = c.error1
-	vim.g.terminal_color_10 = c.string
-	vim.g.terminal_color_11 = c.warn1
-	vim.g.terminal_color_12 = c.uri
-	vim.g.terminal_color_13 = c.trace1
+	vim.g.terminal_color_1 = c.red
+	vim.g.terminal_color_2 = c.dgreen
+	vim.g.terminal_color_3 = c.orange
+	vim.g.terminal_color_4 = c.dblue
+	vim.g.terminal_color_5 = c.purple
+	vim.g.terminal_color_6 = c.cyan
+	vim.g.terminal_color_7 = c.gray
+	vim.g.terminal_color_8 = c.dgray
+	vim.g.terminal_color_9 = c.lred
+	vim.g.terminal_color_10 = c.lgreen
+	vim.g.terminal_color_11 = c.lorange
+	vim.g.terminal_color_12 = c.lblue
+	vim.g.terminal_color_13 = c.lpurple
 	vim.g.terminal_color_14 = c.lcyan
-	vim.g.terminal_color_15 = c.float
+	vim.g.terminal_color_15 = c.lgray
 	vim.g.terminal_color_background = c.bg
 	vim.g.terminal_color_foreground = c.fg
 end
@@ -30,95 +30,95 @@ local function set_groups()
 		NormalNC = { link = "Normal" },
 		NormalFloat = { link = "Normal" },
 
-		ColorColumn = { bg = c.comment }, -- used for the columns set with 'colorcolumn'
-		Conceal = { fg = c.comment }, -- placeholder characters used with 'conceal'
-		CurSearch = { fg = c.fg, bg = c.warn }, -- current search match
-		Cursor = { fg = c.bg, bg = c.comment }, -- character under the cursor
+		ColorColumn = { bg = c.dgray }, -- used for the columns set with 'colorcolumn'
+		Conceal = { fg = c.dgray }, -- placeholder characters used with 'conceal'
+		CurSearch = { fg = c.fg, bg = c.orange }, -- current search match
+		Cursor = { fg = c.bg, bg = c.dgray }, -- character under the cursor
 		lCursor = { link = "Cursor" }, -- cursor when "language-mapping" is used
 		CursorIM = { link = "Cursor" }, -- cursor when in IME mode
 		CursorColumn = { bg = c.grayblue }, -- column of cursor
 		CursorLine = { bg = c.grayblue }, -- row of cursor
-		Directory = { fg = c.operator }, -- directory names
-		DiffAdd = { bg = c.string }, -- diff mode: Added line
-		DiffDelete = { bg = c.error1 }, -- diff mode: Deleted line
-		DiffChange = { bg = c.uri }, -- diff mode: Changed line
+		Directory = { fg = c.fg2 }, -- directory names
+		DiffAdd = { bg = c.lgreen }, -- diff mode: Added line
+		DiffDelete = { bg = c.lred }, -- diff mode: Deleted line
+		DiffChange = { bg = c.lblue }, -- diff mode: Changed line
 		DiffText = { link = "DiffChange" }, -- diff mode: Changed text within a changed line
 		TermCursor = { link = "Cursor" }, -- cursor in a focused terminal
 		TermCursorNC = { link = "Normal" }, -- cursor in an unfocused terminal
-		ErrorMsg = { fg = c.error, bold = true }, -- error messages on the command line
-		WinSeparator = { fg = c.comment, bg = c.bg }, -- vertical separator in windows
-		Folded = { fg = c.variable, bg = c.float }, -- line used for closed folds
+		ErrorMsg = { fg = c.red, bold = true }, -- error messages on the command line
+		WinSeparator = { fg = c.dgray, bg = c.bg }, -- vertical separator in windows
+		Folded = { fg = c.dblue, bg = c.lgray }, -- line used for closed folds
 		FoldColumn = { link = "Folded" }, -- 'foldcolumn'
 		SignColumn = { bg = c.bg }, -- column where signs are displayed
-		IncSearch = { fg = c.fg, bg = c.warn1 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-		Substitute = { fg = c.fg, bg = c.warn2 }, -- highlighting for ":substitute" replacement text
-		LineNr = { fg = c.operator }, -- line number
-		CursorLineNr = { fg = c.operator, bg = c.grayblue, bold = true }, -- line number for cursor line
-		CursorLineFold = { fg = c.operator, bg = c.grayblue }, -- fold for cursor line
+		IncSearch = { fg = c.fg, bg = c.lorange }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+		Substitute = { fg = c.fg, bg = c.dorange }, -- highlighting for ":substitute" replacement text
+		LineNr = { fg = c.fg2 }, -- line number
+		CursorLineNr = { fg = c.fg2, bg = c.grayblue, bold = true }, -- line number for cursor line
+		CursorLineFold = { fg = c.fg2, bg = c.grayblue }, -- fold for cursor line
 		CursorLineSign = { bg = c.grayblue }, -- signcolumn for cursor line
-		MatchParen = { fg = c.operator, bg = c.nontext, bold = true }, -- matching bracket etc
+		MatchParen = { fg = c.fg2, bg = c.gray, bold = true }, -- matching bracket etc
 		ModeMsg = { link = "String" }, -- 'showmode' message
 		MsgArea = { link = "Normal" }, -- Area for messages and cmdline
 		MsgSeparator = { fg = c.bg, bg = c.fg }, -- Separator for scrolled messages, `msgsep` flag of 'display'
 		MoreMsg = { link = "String" }, -- 'more-prompt'
-		FloatBorder = { fg = c.float }, -- border of floating window
-		FloatTitle = { fg = c.operator }, -- title of floating window
-		FloatFooter = { fg = c.comment }, -- footer of floating window
+		FloatBorder = { fg = c.lgray }, -- border of floating window
+		FloatTitle = { fg = c.fg2 }, -- title of floating window
+		FloatFooter = { fg = c.dgray }, -- footer of floating window
 		PMenu = { fg = c.fg, bg = c.bg2 }, -- popup menu: normal item
-		PMenuSel = { fg = c.operator, bg = c.nontext, bold = true }, -- popup menu: selected item
+		PMenuSel = { fg = c.fg2, bg = c.gray, bold = true }, -- popup menu: selected item
 		PMenuKind = { link = "PMenu" }, -- popup menu: normal item "kind"
 		PMenuKindSel = { link = "PMenuSel" }, -- popup menu: selected item "kind"
 		PMenuExtra = { link = "PMenu" }, -- popup menu: normal item "extra text"
 		PMenuExtraSel = { link = "PMenuSel" }, -- popup menu: selected item "extra text"
-		PMenuSBar = { fg = c.comment, bg = c.comment }, -- popup menu: scrollbar
-		PMenuThumb = { fg = c.operator, bg = c.operator }, --	popup menu: Thumb of the scrollbar
-		Question = { fg = c.operator }, -- hit-enter prompt and yes/no questions
+		PMenuSBar = { fg = c.dgray, bg = c.dgray }, -- popup menu: scrollbar
+		PMenuThumb = { fg = c.fg2, bg = c.fg2 }, --	popup menu: Thumb of the scrollbar
+		Question = { fg = c.fg2 }, -- hit-enter prompt and yes/no questions
 		QuickFixLine = { bg = c.grayblue }, -- current quickfix item
-		Search = { fg = c.fg, bg = c.warn1 }, -- last search pattern highlighting
-		SpecialKey = { fg = c.float, bg = c.variable }, -- unprintable character
-		SpellBad = { fg = c.error, undercurl = true }, -- word that is not recognized by the spellchecker
+		Search = { fg = c.fg, bg = c.lorange }, -- last search pattern highlighting
+		SpecialKey = { fg = c.lgray, bg = c.dblue }, -- unprintable character
+		SpellBad = { fg = c.red, undercurl = true }, -- word that is not recognized by the spellchecker
 		SpellCap = { link = "SpellBad" }, -- word that should start with a capital
 		SpellLocal = { link = "SpellBad" }, -- world that is recognized by the spellchecker as one that is used in another region
 		SpellRare = { link = "SpellBad" }, -- word that should start with a capital
 		StatusLine = { fg = c.bg, bg = c.fg }, -- status line of current window
-		StatusLineNC = { fg = c.bg, bg = c.comment }, -- status lines of not-current windows
-		TabLine = { fg = c.fg, bg = c.comment }, -- tab pages line, not active tab page label
+		StatusLineNC = { fg = c.bg, bg = c.dgray }, -- status lines of not-current windows
+		TabLine = { fg = c.fg, bg = c.dgray }, -- tab pages line, not active tab page label
 		TabLineFill = { link = "TabLine" }, -- tab pages line, where there are no labels
-		TabLineSel = { fg = c.operator, bg = c.nontext, bold = true }, -- tab pages line, active tab page label
-		Title = { fg = c.operator, bold = true }, -- titles from output
-		Visual = { bg = c.nontext }, -- visual mode selection
-		WarningMsg = { fg = c.warn, bg = c.warn1 },
+		TabLineSel = { fg = c.fg2, bg = c.gray, bold = true }, -- tab pages line, active tab page label
+		Title = { fg = c.fg2, bold = true }, -- titles from output
+		Visual = { bg = c.gray }, -- visual mode selection
+		WarningMsg = { fg = c.orange, bg = c.lorange },
 		WildMenu = { link = "PMenuSel" }, -- current match in 'wildmenu' completion
 		WinBar = { link = "Normal" }, -- window bar of current window
 		WinBarNC = { link = "Normal" }, -- window bar of current window
 
 		-- 'group-name'
-		Comment = { fg = c.comment, bg = c.bg2 }, -- any comment
-		Constant = { fg = c.variable, bold = true }, -- any constant
-		String = { bg = c.string }, -- any string constant
+		Comment = { fg = c.dgray, bg = c.bg2 }, -- any comment
+		Constant = { bold = true }, -- any constant
+		String = { bg = c.lgreen }, -- any string constant
 		Character = { bg = c.green }, -- a character constant
 		Number = { link = "Constant" }, -- a number constant
 		Boolean = { link = "Constant" }, -- a boolean constant
 		Float = { link = "Constant" }, -- a floating point constant
-		Identifier = { fg = c.variable }, -- any variable
+		Identifier = { link = "Normal" }, -- any variable
 		Function = { fg = c.fg }, -- any function name
 		Statement = { fg = c.fg, bold = true }, -- any statement
 		-- Conditional = {}, -- if, then, else, endif, switch, etc
 		-- Repeat = {}, -- for, do, while, etc
 		-- Label = {}, -- case, default, etc
-		Operator = { fg = c.operator }, --	"sizeof", "+", "*", etc
+		Operator = { fg = c.fg2 }, --	"sizeof", "+", "*", etc
 		-- Keyword = { }, -- any other keyword
 		-- Exception = { }, -- try, catch, throw
-		PreProc = { fg = c.preproc }, -- generic preprocessor
+		PreProc = { fg = c.dgreen }, -- generic preprocessor
 		-- Include = { }, -- #include
 		-- Define = { }, -- #define
 		-- Macro = { }, -- same as Define
 		-- PreCondit = { }, -- preprocessor conditional
-		Type = { fg = c.identifier }, -- int, long, char, etc
+		Type = { bg = c.lcyan }, -- int, long, char, etc
 		-- StorageClass = { }, -- static, register, volatile, etc
-		Structure = { fg = c.variable, bold = true }, -- struct, union, enum, etc
+		Structure = { fg = c.dblue, bold = true }, -- struct, union, enum, etc
 		-- Typedef = { }, -- a typedef
-		Special = { fg = c.variable }, -- any special symbol
+		Special = { fg = c.dblue }, -- any special symbol
 		-- SpecialChar = { }, -- special character in a constant
 		-- Tag = { }, -- you can use CTRL-] on this
 		-- Delimiter = { }, -- character that needs attention
@@ -128,9 +128,9 @@ local function set_groups()
 		Italic = { italic = true }, -- italic things
 		Strikethrough = { strikethrough = true }, -- strikethrough things
 		Underlined = { underline = true }, -- underlined things
-		Error = { fg = c.error, bg = c.error1, bold = true }, -- any erroneous construct
-		NonText = { fg = c.nontext },
-		Todo = { fg = c.fg, bg = c.uri, bold = true },
+		Error = { fg = c.red, bg = c.lred, bold = true }, -- any erroneous construct
+		NonText = { fg = c.gray },
+		Todo = { fg = c.fg, bg = c.lblue, bold = true },
 		Added = { link = "DiffAdd" }, -- added line in diff
 		Changed = { link = "DiffChange" }, -- changed line in diff
 		Removed = { link = "DiffDelete" }, -- deleted line in diff
@@ -140,32 +140,32 @@ local function set_groups()
 		LspReferenceRead = { bg = c.bg2 },
 		LspReferenceWrite = { bg = c.bg2 },
 
-		LspInlayHint = { fg = c.comment, bg = c.grayblue },
+		LspInlayHint = { fg = c.dgray, bg = c.grayblue },
 
-		LspCodeLens = { fg = c.comment },
-		LspCodeLensSeparator = { fg = c.comment },
-		LspSignatureActiveParameter = { fg = c.variable, bg = c.grayblue },
+		LspCodeLens = { fg = c.dgray },
+		LspCodeLensSeparator = { fg = c.dgray },
+		LspSignatureActiveParameter = { fg = c.dblue, bg = c.grayblue },
 
 		-- 'diagnostic-highlights'
 		DiagnosticError = { link = "Error" },
 		DiagnosticWarn = { link = "WarningMsg" },
-		DiagnosticInfo = { fg = c.variable, bg = c.uri },
+		DiagnosticInfo = { fg = c.dblue, bg = c.lblue },
 		DiagnosticHint = { fg = c.fg, bg = c.grayblue },
-		DiagnosticOk = { fg = c.preproc, bg = c.grayblue },
+		DiagnosticOk = { fg = c.dgreen, bg = c.grayblue },
 
-		DiagnosticUnderlineError = { sp = c.error, undercurl = true },
-		DiagnosticUnderlineWarn = { sp = c.warn, undercurl = true },
-		DiagnosticUnderlineInfo = { sp = c.variable, undercurl = true },
-		DiagnosticUnderlineHint = { sp = c.comment, undercurl = true },
-		DiagnosticUnderlineOk = { sp = c.preproc, undercurl = true },
+		DiagnosticUnderlineError = { sp = c.red, undercurl = true },
+		DiagnosticUnderlineWarn = { sp = c.orange, undercurl = true },
+		DiagnosticUnderlineInfo = { sp = c.dblue, undercurl = true },
+		DiagnosticUnderlineHint = { sp = c.dgray, undercurl = true },
+		DiagnosticUnderlineOk = { sp = c.dgreen, undercurl = true },
 
 		DiagnosticDeprecated = { strikethrough = true },
-		DiagnosticUnnecessary = { fg = c.comment },
+		DiagnosticUnnecessary = { fg = c.dgray },
 
 		-- 'treesitter-highlights'
 		["@variable"] = { link = "Identifier" }, -- various variable names
 		["@variable.builtin"] = { link = "@variable" }, -- built-ins (`this` etc)
-		["@variable.parameter"] = { fg = c.variable, bg = c.grayblue }, -- parameters of functions
+		["@variable.parameter"] = { fg = c.dblue, bg = c.grayblue }, -- parameters of functions
 		["@variable.member"] = { fg = c.fg }, -- object and sstruct fields
 
 		["@constant"] = { link = "Constant" }, -- constant identifiers
@@ -178,8 +178,8 @@ local function set_groups()
 
 		["@string"] = { link = "String" }, -- string literals
 		["@string.documentation"] = { link = "Comment" }, -- string documenting code
-		["@string.regexp"] = { fg = c.variable }, -- regular expressions
-		["@string.escape"] = { fg = c.variable }, -- escape sequences
+		["@string.regexp"] = { fg = c.dblue }, -- regular expressions
+		["@string.escape"] = { fg = c.dblue }, -- escape sequences
 		["@string.special"] = { link = "Special" }, -- other special strings
 		["@string.special.symbol"] = { link = "@string.special" }, -- symbols or atoms
 		["@string.special.path"] = { link = "@string.special" }, -- filenames
@@ -196,8 +196,8 @@ local function set_groups()
 		["@type.builtin"] = { link = "@type" }, -- built-in types
 		["@type.definition"] = { link = "@type" }, -- identifiers in type definitions
 
-		["@attribute"] = { fg = c.variable, bold = true }, -- attribute annotations (decorators etc)
-		["@property"] = { fg = c.operator }, -- the key in key/value pairs
+		["@attribute"] = { bold = true }, -- attribute annotations (decorators etc)
+		["@property"] = { fg = c.fg2 }, -- the key in key/value pairs
 
 		["@function"] = { link = "Function" }, -- function definitions
 		["@function.builtin"] = { link = "@function" }, -- built-in functions
@@ -224,7 +224,7 @@ local function set_groups()
 		["@keyword.directive"] = { link = "@keyword" }, -- various preprocessor directives and shebangs
 		["@keyword.directive.define"] = { link = "@keyword.directive" }, -- preprocessor definition directives
 
-		["@punctuation"] = { fg = c.operator },
+		["@punctuation"] = { fg = c.fg2 },
 		["@punctuation.delimiter"] = { link = "@punctuation" }, -- delimiters (e.g. `;` / `.` / `,`)
 		["@punctuation.bracket"] = { link = "@punctuation" }, -- brackets (e.g. `()` / `{}` / `[]`)
 		["@punctuation.special"] = { link = "@punctuation" }, -- special symbols (e.g. `{}` in string interpolation)
@@ -241,15 +241,15 @@ local function set_groups()
 		["@markup.strikethrough"] = { link = "Strikethrough" }, -- struck-through text
 		["@markup.underline"] = { link = "Underlined" }, -- underlined text (only for literal underline markup!)
 		["@markup.heading"] = { link = "Title" }, -- headings, titles (including markers)
-		["@markup.quote"] = { fg = c.operator, bg = c.grayblue }, -- block quotes
-		["@markup.math"] = { fg = c.variable, bold = true }, -- math environments (e.g. `$ ... $` in LaTeX)
+		["@markup.quote"] = { fg = c.fg2, bg = c.grayblue }, -- block quotes
+		["@markup.math"] = { fg = c.dblue, bold = true }, -- math environments (e.g. `$ ... $` in LaTeX)
 		["@markup.environment"] = { link = "Special" }, -- environments (e.g. in LaTeX)
-		["@markup.link"] = { fg = c.variable, underline = true }, -- text references, footnotes, citations, etc.
+		["@markup.link"] = { fg = c.dblue, underline = true }, -- text references, footnotes, citations, etc.
 		["@markup.link.label"] = { link = "@markup.lunk" }, -- link, reference descriptions
-		["@markup.link.url"] = { fg = c.variable, underline = true, bold = true }, -- url-stype links
+		["@markup.link.url"] = { fg = c.dblue, underline = true, bold = true }, -- url-stype links
 		["@markup.raw"] = { fg = c.fg, bg = c.bg2 }, -- literal or verbatim text (e.g. inline code)
 		["@markup.raw.block"] = { link = "@markup.raw" }, -- literal or verbatim text as a stand-alone block
-		["@markup.list"] = { fg = c.operator, bold = true }, -- list markers
+		["@markup.list"] = { fg = c.fg2, bold = true }, -- list markers
 		["@markup.list.checked"] = { link = "@markup.list" }, -- checked todo-style list markers
 		["@markup.list.unchecked"] = { link = "@markup.list" }, -- unchecked todo-style list markers
 
@@ -263,22 +263,22 @@ local function set_groups()
 		-- TODO: 'lsp-semantic-highlight'
 
 		-- lewis6991/gitsigns.nvim
-		GitSignsAdd = { fg = c.string, bg = c.bg },
-		GitSignsChange = { fg = c.uri, bg = c.bg },
-		GitSignsDelete = { fg = c.error1, bg = c.bg },
+		GitSignsAdd = { fg = c.lgreen, bg = c.bg },
+		GitSignsChange = { fg = c.lblue, bg = c.bg },
+		GitSignsDelete = { fg = c.lred, bg = c.bg },
 
 		-- rcarriga/nvim-notify
-		NotifyERRORBorder = { fg = c.error2 },
-		NotifyWARNBorder = { fg = c.warn2 },
-		NotifyINFOBorder = { fg = c.variable },
-		NotifyDEBUGBorder = { fg = c.comment },
-		NotifyTRACEBorder = { fg = c.trace2 },
+		NotifyERRORBorder = { fg = c.dred },
+		NotifyWARNBorder = { fg = c.dorange },
+		NotifyINFOBorder = { fg = c.dblue },
+		NotifyDEBUGBorder = { fg = c.dgray },
+		NotifyTRACEBorder = { fg = c.dpurple },
 
-		NotifyERRORIcon = { fg = c.error },
-		NotifyWARNIcon = { fg = c.warn },
-		NotifyINFOIcon = { fg = c.identifier },
-		NotifyDEBUGIcon = { fg = c.comment },
-		NotifyTRACEIcon = { fg = c.trace },
+		NotifyERRORIcon = { fg = c.red },
+		NotifyWARNIcon = { fg = c.orange },
+		NotifyINFOIcon = { fg = c.cyan },
+		NotifyDEBUGIcon = { fg = c.dgray },
+		NotifyTRACEIcon = { fg = c.purple },
 
 		NotifyERRORTitle = { link = "NotifyERRORIcon" },
 		NotifyWARNTitle = { link = "NotifyWARNIcon" },
@@ -287,9 +287,9 @@ local function set_groups()
 		NotifyTRACETitle = { link = "NotifyTRACEIcon" },
 
 		-- NeogitOrg/neogit
-		NeogitBranch = { fg = c.trace },
+		NeogitBranch = { fg = c.purple },
 		NeogitBranchHead = { link = "NeogitBranch" },
-		NeogitRemote = { fg = c.trace },
+		NeogitRemote = { fg = c.purple },
 		NeogitObjectId = { link = "Comment" },
 		NeogitStash = { link = "Normal" },
 		NeogitFold = { link = "Folded" },
@@ -297,22 +297,22 @@ local function set_groups()
 		NeogitSectionHeader = { link = "Title" },
 		NeogitUnmergedInto = { link = "NeogitSectionHeader" },
 
-		NeogitChangeModified = { fg = c.variable, bold = true },
+		NeogitChangeModified = { fg = c.dblue, bold = true },
 		NeogitChangeAdded = { fg = c.green, bold = true },
-		NeogitChangeDeleted = { fg = c.error, bold = true },
+		NeogitChangeDeleted = { fg = c.red, bold = true },
 		NeogitChangeRenamed = { link = "NeogitChangeModified" },
 		NeogitChangeUpdated = { link = "NeofitChangeModified" },
 		NeogitChangeCopied = { link = "NeogitChangeModified" },
 		NeogitChangeBothModified = { link = "NeogitChangeModified" },
 		NeogitChangeNewFile = { link = "NeogitChangeAdded" },
 
-		NeogitHunkHeader = { fg = c.fg, bg = c.float },
+		NeogitHunkHeader = { fg = c.fg, bg = c.lgray },
 		NeogitDiffContext = { fg = c.fg, bg = c.bg },
 		NeogitDiffAdd = { link = "DiffAdd" },
 		NeogitDiffDelete = { link = "DiffDelete" },
 		NeogitDiffHeader = { link = "Title" },
 
-		NeogitHunkHeaderHighlight = { fg = c.fg, bg = c.comment },
+		NeogitHunkHeaderHighlight = { fg = c.fg, bg = c.dgray },
 		NeogitDiffContextHighlight = { fg = c.fg, bg = c.bg2 },
 		NeogitDiffAddHighlight = { link = "DiffAdd" },
 		NeogitDiffDeleteHighlight = { link = "DiffDelete" },
@@ -326,25 +326,25 @@ local function set_groups()
 
 		TelescopeNormal = { link = "NormalFloat" },
 		TelescopePreviewNormal = { link = "Normal" },
-		TelescopePromptNormal = { bg = c.nontext },
+		TelescopePromptNormal = { bg = c.gray },
 		TelescopeResultsNormal = { link = "TelescopeNormal" },
 
 		TelescopeBorder = { link = "FloatBorder" },
-		TelescopePreviewBorder = { bg = c.nontext },
+		TelescopePreviewBorder = { bg = c.gray },
 		TelescopePromptBorder = { link = "TelescopePromptNormal" },
 		TelescopeResultsBorder = { link = "telescopeBorder" },
 
 		TelescopeTitle = { link = "FloatTitle" },
-		TelescopePreviewTitle = { fg = c.fg, bg = c.float },
+		TelescopePreviewTitle = { fg = c.fg, bg = c.lgray },
 		TelescopePromptTitle = { fg = c.bg, bg = c.fg, bold = true },
 		TelescopeResultsTitle = { link = "TelescopeTitle" },
 
-		TelescopeMatching = { fg = c.variable, bold = true },
+		TelescopeMatching = { fg = c.dblue, bold = true },
 
-		TelescopePromptPrefix = { fg = c.operator, bold = true },
+		TelescopePromptPrefix = { fg = c.fg2, bold = true },
 
 		FidgetTitle = { link = "Title" },
-		FidgetTask = { fg = c.comment },
+		FidgetTask = { fg = c.dgray },
 	}
 
 	for group, parameter in pairs(groups) do
