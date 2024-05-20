@@ -286,6 +286,11 @@ local function set_groups()
 		NotifyDEBUGTitle = { link = "NotifyDEBUGIcon" },
 		NotifyTRACETitle = { link = "NotifyTRACEIcon" },
 
+		-- nvim-lualine/lualine.nvim
+		LuaLineDiffAdd = { fg = c.green },
+		LuaLineDiffChange = { fg = c.blue },
+		LuaLineDiffDelete = { fg = c.red },
+
 		-- NeogitOrg/neogit
 		NeogitBranch = { fg = c.purple },
 		NeogitBranchHead = { link = "NeogitBranch" },
