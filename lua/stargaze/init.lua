@@ -268,6 +268,7 @@ local function set_groups()
 		GitSignsDelete = { fg = c.lred, bg = c.bg },
 
 		-- rcarriga/nvim-notify
+		NotifyBackground = { link = "NormalFloat" },
 		NotifyERRORBorder = { fg = c.dred },
 		NotifyWARNBorder = { fg = c.dorange },
 		NotifyINFOBorder = { fg = c.dblue },
